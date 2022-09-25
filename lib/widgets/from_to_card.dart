@@ -93,7 +93,7 @@ class FromToCard extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: 'To\n',
+                        text: 'Siguiente parada\n',
                         style: TextStyle(fontWeight: FontWeight.w200),
                       ),
                       TextSpan(

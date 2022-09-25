@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:public_transport_app/system/routeList.dart';
 import '../system/constants.dart';
 
 class TransportCard extends StatelessWidget {
-  final String name;
-  final String image;
-  final Color background;
+  RouteModel routeModel;
+  final VoidCallback pressSelect;
   final double topValue;
   final double bottomValue;
-  final VoidCallback pressSelect;
-
-  const TransportCard({
-    Key? key,
-    required this.name,
-    required this.image,
-    this.background = kLightBlue,
+  
+  TransportCard({
+    required this.routeModel,
+    required this.pressSelect,
     this.topValue = 15,
     this.bottomValue = 0,
-    required this.pressSelect,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +28,7 @@ class TransportCard extends StatelessWidget {
         height: 150,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: background,
+          color: routeModel.colorCode,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Stack(
@@ -40,7 +36,7 @@ class TransportCard extends StatelessWidget {
             Positioned(
               left: 2,
               child: Text(
-                name,
+                routeModel.routeName,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
@@ -78,7 +74,7 @@ class TransportCard extends StatelessWidget {
               child: Container(
                 width: 235,
                 child: Image.asset(
-                  image,
+                  routeModel.image,
                 ),
               ),
             ),

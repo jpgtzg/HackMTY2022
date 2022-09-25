@@ -1,16 +1,17 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:public_transport_app/screens/transport_details.dart';
+import 'package:public_transport_app/system/routeList.dart';
 import 'package:public_transport_app/widgets/transport_card.dart';
 
-import '../system/schedule.dart';
-
 class Home extends StatelessWidget {
+  var routeList = [];
   @override
   Widget build(BuildContext context) {
+    for (var i = 0; i < RouteModel.routesList.length; i++) {
+      routeList.add(RouteModel.routesList[i]);
+    }
     // Example of JSON data as retrieved from the DB
-    String schJson = """[{
+    /*    String schJson = """[{
    "fromTime":"10:00",
    "toTime":"10:30",
    "location":"Lorem MRT Station",
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
     var dSch = jsonDecode(schJson);
     var schedules =
         (dSch as List).map((data) => new Schedule.fromJson(data)).toList();
-
+ */
     return Scaffold(
       backgroundColor: Color(0xFF1E91D6),
       body: Stack(children: [
@@ -140,79 +141,30 @@ class Home extends StatelessWidget {
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
-                              SizedBox(height: 15),
-                              TransportCard(
-                                background: Color(0xff0d0057),
-                                name: 'Garza Sada',
-                                image: 'assets/images/bus.png',
-                                pressSelect: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return TransportDetails(
-                                        title: "Garza Sada",
-                                        image: 'assets/images/bus.png',
-                                        location: "Lorem BUS Station",
-                                        destination: "Dolor BUS Station",
-                                        schedules: schedules,
-                                        colorCode: Color(0xff0d0057),);
-                                  }));
+                              ListView.builder(
+                                itemCount: routeList.length,
+                                shrinkWrap: true,
+                                physics: ScrollPhysics(),
+                                itemBuilder: (context, index) {
+                                  return Column(
+                                    children: [
+                                      TransportCard(
+                                        routeModel: routeList[index],
+                                        pressSelect: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                            return TransportDetails(
+                                              routeModel: routeList[index],
+                                            );
+                                          }));
+                                        },
+                                      ),
+                                      SizedBox(height: 16),
+                                    ],
+                                  );
                                 },
                               ),
-                              SizedBox(height: 16),
-                              TransportCard(
-                                background: Color(0xfffd8204),
-                                name: 'Revolución',
-                                image: 'assets/images/bus.png',
-                                pressSelect: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return TransportDetails(
-                                        title: "Revolución",
-                                        image: 'assets/images/bus.png',
-                                        location: "Lorem BUS Station",
-                                        destination: "Dolor BUS Station",
-                                        schedules: schedules,
-                                        colorCode: Color(0xfffd8204),);
-                                  }));
-                                },
-                              ),
-                              SizedBox(height: 16),
-                              TransportCard(
-                                background: Color(0xffea0a2a),
-                                name: 'Hosp. & Esc.',
-                                image: 'assets/images/bus.png',
-                                pressSelect: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return TransportDetails(
-                                        title: "Hosp. & Esc.",
-                                        image: 'assets/images/bus.png',
-                                        location: "Lorem BUS Station",
-                                        destination: "Dolor BUS Station",
-                                        schedules: schedules,
-                                        colorCode: Color(0xffea0a2a),);
-                                  }));
-                                },
-                              ),
-                              SizedBox(height: 16),
-                              TransportCard(
-                                background: Color(0xff800d07),
-                                name: 'Valle Alto',
-                                image: 'assets/images/bus.png',
-                                pressSelect: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return TransportDetails(
-                                        title: "Valle Alto",
-                                        image: 'assets/images/bus.png',
-                                        location: "Lorem BUS Station",
-                                        destination: "Dolor BUS Station",
-                                        schedules: schedules,
-                                        colorCode: Color(0xff800d07),);
-                                  }));
-                                },
-                              ),
-                              SizedBox(height: 16),
                             ],
                           ),
                         ),

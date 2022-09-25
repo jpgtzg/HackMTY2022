@@ -1,38 +1,24 @@
 import 'package:flutter/material.dart';
-import '../system/constants.dart';
-import 'package:public_transport_app/widgets/from_to_card.dart';
-import 'package:public_transport_app/widgets/schedule_box.dart';
-import '../system/schedule.dart';
+import 'package:public_transport_app/system/routeList.dart';
+
+import '../widgets/from_to_card.dart';
 
 class TransportDetails extends StatelessWidget {
-  final String title;
-  final String image;
-  final String location;
-  final String destination;
-  final List schedules;
-  final Color colorCode;
+  RouteModel routeModel;
 
-  const TransportDetails({
-    Key? key,
-    required this.title,
-    required this.image,
-    required this.location,
-    required this.destination,
-    required this.schedules,
-    required this.colorCode
-  }) : super(key: key);
+  TransportDetails({required this.routeModel});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colorCode,
+      backgroundColor: routeModel.colorCode,
       body: Column(
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 50.0),
             child: Center(
                 child: Text(
-              title,
+              routeModel.routeName,
               style: TextStyle(
                 color: Colors.white,
                 fontFamily: 'Myriad Pro',
@@ -48,7 +34,7 @@ class TransportDetails extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(image),
+                image: AssetImage('assets/images/bus.png'),
               ),
             ),
           ),
@@ -75,10 +61,10 @@ class TransportDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  FromToCard(from: location, to: destination),
+                  FromToCard(from: "asd", to: "asd"),
                   SizedBox(height: 25),
                   Text(
-                    'Choose Schedule',
+                    'Horarios',
                     style: TextStyle(
                       fontFamily: 'MyriadPro',
                       fontWeight: FontWeight.w700,
@@ -90,14 +76,14 @@ class TransportDetails extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       child: Column(
                         children: [
-                          for (Schedule schedule in schedules) ...[
-                            ScheduleBox(
-                              fromTime: schedule.fromTime,
-                              toTime: schedule.toTime,
-                              location: schedule.location,
-                              pressSelect: () {},
-                            ),
-                          ]
+                          // for (Schedule schedule in routeModel.routeTimes) ...[
+                          //   ScheduleBox(
+                          //     fromTime: schedule.fromTime,
+                          //     toTime: schedule.toTime,
+                          //     location: schedule.location,
+                          //     pressSelect: () {},
+                          //   ),
+                          // ]
                         ],
                       ),
                     ),
