@@ -3,6 +3,7 @@ import 'package:public_transport_app/screens/transport_details.dart';
 import 'package:public_transport_app/system/routeList.dart';
 import 'package:public_transport_app/widgets/transport_card.dart';
 
+// ignore: must_be_immutable
 class Home extends StatelessWidget {
   var routeList = [];
   @override

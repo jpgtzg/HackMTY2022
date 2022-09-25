@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:public_transport_app/screens/specificmap_screen.dart';
 import 'package:public_transport_app/system/routeList.dart';
-import 'package:public_transport_app/system/schedule.dart';
 import 'package:public_transport_app/widgets/schedule_box.dart';
 import 'package:public_transport_app/widgets/topbar.dart';
 
 import '../widgets/from_to_card.dart';
 
+// ignore: must_be_immutable
 class TransportDetails extends StatelessWidget {
   RouteModel routeModel;
 
@@ -67,13 +68,36 @@ class TransportDetails extends StatelessWidget {
                 children: <Widget>[
                   FromToCard(routeModel: routeModel, from: "asd", to: "asd"),
                   SizedBox(height: 25),
-                  Text(
-                    'Horarios',
-                    style: TextStyle(
-                      fontFamily: 'MyriadPro',
-                      fontWeight: FontWeight.w700,
-                      fontSize: 26,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Horarios',
+                        style: TextStyle(
+                          fontFamily: 'MyriadPro',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 26,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return SpecMapScreen(mapURL: routeModel.mapURL,);
+                            },
+                          ),
+                        ),
+                        child: Text(
+                          "Ver mapa",
+                          style: TextStyle(
+                            fontFamily: 'MyriadPro',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                   Expanded(
                     child: SingleChildScrollView(

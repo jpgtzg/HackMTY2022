@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class RouteModel {
@@ -8,14 +6,20 @@ class RouteModel {
   List<String> routeTimes = [];
   Color colorCode;
   String image;
+  String mapURL;
 
   RouteModel(
-      this.routeName, this.routes, this.routeTimes, this.colorCode, this.image);
+      {required this.routeName,
+      required this.routes,
+      required this.routeTimes,
+      required this.colorCode,
+      required this.image,
+      required this.mapURL});
 
   static List<RouteModel> routesList = [
     RouteModel(
-      "Garza Sada",
-      [
+      routeName: "Garza Sada",
+      routes: [
         "Estacionamiento CETEC",
         "Paseo Tec",
         "Gasolinera (OXXOGAS)",
@@ -59,7 +63,7 @@ class RouteModel {
         "Puente peatonal (Cinépolis Garza Sada)",
         "Estacionamiento El Borrego",
       ],
-      [
+      routeTimes: [
         "0:00",
         "0:01",
         "0:02",
@@ -103,12 +107,14 @@ class RouteModel {
         "0:50",
         "0:51",
       ],
-      Color(0xff0d0057),
-      "assets/images/bus.png",
+      colorCode: Color(0xff0d0057),
+      image: "assets/images/bus.png",
+      mapURL:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1vu7NNZBcdR-2n4FwjS9dSDCYwZM&ll=25.649098561315007%2C-100.28601545504762&z=14",
     ),
     RouteModel(
-      "Revolución",
-      [
+      routeName: "Revolución",
+      routes: [
         "Estacionamiento CETEC",
         "Rectoría",
         "E1 (Calle Nogales)",
@@ -123,27 +129,29 @@ class RouteModel {
         "Edificio IV",
         "El Borrego",
       ],
-      [
-        "00:00/00:15/00:30/00:45", 
-        "00:02/00:17/00:32/00:47", 
+      routeTimes: [
+        "00:00/00:15/00:30/00:45",
+        "00:02/00:17/00:32/00:47",
         "00:05/00:20/00:35/00:50",
-        "00:06/00:21/00:36/00:51", 
-        "00:07/00:22/00:37/00:52", 
-        "00:11/00:26/00:41/00:56", 
-        "00:14/00:29/00:44/00:59", 
-        "00:17/00:32/00:47/00:02", 
-        "00:18/00:33/00:48/00:03", 
-        "00:19/00:34/00:49/00:04", 
-        "00:20/00:35/00:50/00:05", 
-        "00:22/00:37/00:52/00:07", 
-        "00:24/00:39/00:54/00:09", 
+        "00:06/00:21/00:36/00:51",
+        "00:07/00:22/00:37/00:52",
+        "00:11/00:26/00:41/00:56",
+        "00:14/00:29/00:44/00:59",
+        "00:17/00:32/00:47/00:02",
+        "00:18/00:33/00:48/00:03",
+        "00:19/00:34/00:49/00:04",
+        "00:20/00:35/00:50/00:05",
+        "00:22/00:37/00:52/00:07",
+        "00:24/00:39/00:54/00:09",
       ],
-      Color(0xfffd8204),
-      "assets/images/bus.png",
+      colorCode: Color(0xfffd8204),
+      image: "assets/images/bus.png",
+      mapURL:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1I-JLrBnF4oHna8AH9oSzhPAz8Hw&ll=25.653824293660957%2C-100.28528900460049&z=16",
     ),
     RouteModel(
-      "Hosp. & Esc.",
-      [
+      routeName: "Hosp. & Esc.",
+      routes: [
         "Estacionamiento CETEC",
         "Estación Metrorrey General I. Zaragoza",
         "Centro Médico Zambrano Hellion (Presidencia)",
@@ -152,7 +160,7 @@ class RouteModel {
         "Río Aguanaval (Facefood / Taller)",
         "OXXO Río Pánuco",
       ],
-      [
+      routeTimes: [
         "00:00/00:00",
         "00:09 (Mañana)/00:44 (Tarde)",
         "00:31 (Mañana)/00:25 (Tarde)",
@@ -161,12 +169,14 @@ class RouteModel {
         "00:44(Mañana)/00:04(Tarde)",
         "00:46(Mañana)/00:02(Tarde)",
       ],
-      Color(0xffea0a2a),
-      "assets/images/bus.png",
+      colorCode: Color(0xffea0a2a),
+      image: "assets/images/bus.png",
+      mapURL:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1fpXL9DsK8V15lCVUkne42L2DFCo&ll=25.654722809034414%2C-100.32235800000002&z=14",
     ),
     RouteModel(
-      "Valle Alto",
-      [
+      routeName: "Valle Alto",
+      routes: [
         "Estacionamiento CETEC",
         "Walmart Las Torres",
         "Paseo de Los Misterios",
@@ -178,7 +188,7 @@ class RouteModel {
         "OXXO Álamos",
         "Lago Eire (Parabús lateral)",
       ],
-      [
+      routeTimes: [
         "0:00",
         "0:10",
         "0:13",
@@ -190,8 +200,10 @@ class RouteModel {
         "0:35",
         "0:38",
       ],
-      Color(0xff800d07),
-      "assets/images/bus.png",
+      colorCode: Color(0xff800d07),
+      image: "assets/images/bus.png",
+      mapURL:
+          "https://www.google.com/maps/d/u/0/viewer?mid=1UdvrUgPfVoEQ5mkCcP0IiFQ8xYY83CuV&ll=25.62447746872796%2C-100.24957419381725&z=13",
     ),
   ];
 }

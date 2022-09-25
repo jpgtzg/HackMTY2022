@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../system/constants.dart';
 import '../system/routeList.dart';
 
+// ignore: must_be_immutable
 class FromToCard extends StatelessWidget {
   RouteModel routeModel;
   final String from;
@@ -35,7 +36,6 @@ class FromToCard extends StatelessWidget {
       ),
       child: Stack(
         children: <Widget>[
-          
           Positioned(
             top: 18,
             child: Container(

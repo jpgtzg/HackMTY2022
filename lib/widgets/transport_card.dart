@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:public_transport_app/system/routeList.dart';
-import '../system/constants.dart';
 
+// ignore: must_be_immutable
 class TransportCard extends StatelessWidget {
   RouteModel routeModel;
   final VoidCallback pressSelect;
