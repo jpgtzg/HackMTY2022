@@ -52,10 +52,10 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               ),
               BottomNavyBarItem(
                 title: const Text(
-                  'Robots',
+                  'Map',
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
-                icon: const Icon(Icons.apps),
+                icon: const Icon(Icons.map),
                 activeColor: const Color(0xFF1E91D6),
               ),
               BottomNavyBarItem(

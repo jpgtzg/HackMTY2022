@@ -21,47 +21,47 @@ class TransportCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(
-        top: 15,
-        bottom: 25,
-        left: 25,
-      ),
-      height: 150,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: background,
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Stack(
-        children: [
-          Positioned(
-            left: 2,
-            child: Text(
-              name,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 25,
+    return GestureDetector(
+      onTap: pressSelect,
+      child: Container(
+        padding: EdgeInsets.only(
+          top: 15,
+          bottom: 25,
+          left: 25,
+        ),
+        height: 150,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: background,
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              left: 2,
+              child: Text(
+                name,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 25,
+                ),
               ),
             ),
-          ),
-          Positioned(
-            bottom: 0,
-            child: GestureDetector(
-              onTap: pressSelect,
+            Positioned(
+              bottom: 0,
               child: Container(
                 padding: EdgeInsets.all(2),
-                height: 25,
-                width: 75,
+                height: 30,
+                width: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: Colors.white,
                 ),
                 child: Center(
                     child: Text(
-                  'Select',
+                  'Elegir',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
@@ -71,19 +71,19 @@ class TransportCard extends StatelessWidget {
                 )),
               ),
             ),
-          ),
-          Positioned(
-            right: 0,
-            top: topValue,
-            bottom: bottomValue,
-            child: Container(
-              width: 235,
-              child: Image.asset(
-                image,
+            Positioned(
+              right: 0,
+              top: topValue,
+              bottom: bottomValue,
+              child: Container(
+                width: 235,
+                child: Image.asset(
+                  image,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

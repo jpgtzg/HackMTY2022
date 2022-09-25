@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:public_transport_app/appmanager.dart';
 
-
-void main() => runApp(MaterialApp(
-      home: Main(),
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'OpenSans'),
-    ));
+void main() => runApp(Main());
 
 class Main extends StatefulWidget {
   @override
@@ -14,12 +9,12 @@ class Main extends StatefulWidget {
 }
 
 class _MainState extends State<Main> {
-    @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF4CB944),
-      body: AppManager(),
-      
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'OpenSans'),
+      home: AppManager(),
     );
   }
 }

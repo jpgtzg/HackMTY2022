@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:public_transport_app/Account.dart';
 import 'package:public_transport_app/screens/transport_details.dart';
 import 'package:public_transport_app/widgets/transport_card.dart';
 
@@ -33,13 +32,6 @@ class Home extends StatelessWidget {
     var dSch = jsonDecode(schJson);
     var schedules =
         (dSch as List).map((data) => new Schedule.fromJson(data)).toList();
-
-    // Example of JSON data as retrieved from the DB
-    String accJson =
-        '{"firstName": "John", "lastName": "Doe", "balance": 18, "rewards": 10.25, "trips": 189}';
-
-    var dAcc = jsonDecode(accJson);
-    Account account = Account.fromJson(dAcc);
 
     return Scaffold(
       backgroundColor: Color(0xFF1E91D6),
@@ -150,7 +142,7 @@ class Home extends StatelessWidget {
                               ),
                               SizedBox(height: 15),
                               TransportCard(
-                                background: Color(0xFF4CB944),
+                                background: Color(0xff0d0057),
                                 name: 'Garza Sada ',
                                 image: 'assets/images/bus.png',
                                 pressSelect: () {
@@ -167,7 +159,7 @@ class Home extends StatelessWidget {
                               ),
                               SizedBox(height: 16),
                               TransportCard(
-                                background: Color(0xFF4CB944),
+                                background: Color(0xfffd8204),
                                 name: 'Revolución',
                                 image: 'assets/images/bus.png',
                                 pressSelect: () {
@@ -184,7 +176,7 @@ class Home extends StatelessWidget {
                               ),
                               SizedBox(height: 16),
                               TransportCard(
-                                background: Color(0xFF4CB944),
+                                background: Color(0xffea0a2a),
                                 name: 'Hosp. & Esc.',
                                 image: 'assets/images/bus.png',
                                 pressSelect: () {
@@ -201,7 +193,7 @@ class Home extends StatelessWidget {
                               ),
                               SizedBox(height: 16),
                               TransportCard(
-                                background: Color(0xFF4CB944),
+                                background: Color(0xff800d07),
                                 name: 'Valle Alto',
                                 image: 'assets/images/bus.png',
                                 pressSelect: () {
