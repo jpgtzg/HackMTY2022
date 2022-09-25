@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:public_transport_app/screens/data_screen.dart';
 import 'package:public_transport_app/screens/home_screen.dart';
 import 'package:public_transport_app/screens/map_screen.dart';
 
@@ -29,6 +30,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               children: <Widget>[
                 Home(),
                 MapScreen(),
+                DataScreen(),
               ],
             ),
           ),
@@ -53,6 +55,14 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
                 icon: const Icon(Icons.map),
+                activeColor: const Color(0xFF1E91D6),
+              ),
+              BottomNavyBarItem(
+                title: const Text(
+                  'Trafico',
+                  style: TextStyle(fontFamily: "Manrope"),
+                ),
+                icon: const Icon(Icons.add_chart),
                 activeColor: const Color(0xFF1E91D6),
               ),
             ],
