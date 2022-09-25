@@ -65,7 +65,7 @@ class TransportDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  FromToCard(from: "asd", to: "asd"),
+                  FromToCard(routeModel: routeModel, from: "asd", to: "asd"),
                   SizedBox(height: 25),
                   Text(
                     'Horarios',

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../system/constants.dart';
+import '../system/routeList.dart';
 
 class FromToCard extends StatelessWidget {
+  RouteModel routeModel;
   final String from;
   final String to;
 
-  const FromToCard({
+  FromToCard({
     Key? key,
+    required this.routeModel,
     required this.from,
     required this.to,
   }) : super(key: key);
@@ -32,6 +35,7 @@ class FromToCard extends StatelessWidget {
       ),
       child: Stack(
         children: <Widget>[
+          
           Positioned(
             top: 18,
             child: Container(
@@ -69,7 +73,7 @@ class FromToCard extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.w200),
                         ),
                         TextSpan(
-                          text: from,
+                          text: routeModel.routes[1],
                           style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ],
@@ -97,7 +101,7 @@ class FromToCard extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.w200),
                       ),
                       TextSpan(
-                        text: to,
+                        text: routeModel.routes[2],
                         style: TextStyle(fontWeight: FontWeight.w700),
                       ),
                     ],
