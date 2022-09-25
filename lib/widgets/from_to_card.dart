@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../system/constants.dart';
 
 class FromToCard extends StatelessWidget {
   final String from;

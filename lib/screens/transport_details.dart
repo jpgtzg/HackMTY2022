@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:public_transport_app/constants.dart';
+import '../system/constants.dart';
 import 'package:public_transport_app/widgets/from_to_card.dart';
 import 'package:public_transport_app/widgets/schedule_box.dart';
-import '../schedule.dart';
+import '../system/schedule.dart';
 
 class TransportDetails extends StatelessWidget {
   final String title;
@@ -10,6 +10,7 @@ class TransportDetails extends StatelessWidget {
   final String location;
   final String destination;
   final List schedules;
+  final Color colorCode;
 
   const TransportDetails({
     Key? key,
@@ -18,12 +19,13 @@ class TransportDetails extends StatelessWidget {
     required this.location,
     required this.destination,
     required this.schedules,
+    required this.colorCode
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kMoonStones,
+      backgroundColor: colorCode,
       body: Column(
         children: <Widget>[
           Container(
@@ -35,14 +37,14 @@ class TransportDetails extends StatelessWidget {
                 color: Colors.white,
                 fontFamily: 'Myriad Pro',
                 fontWeight: FontWeight.w700,
-                fontSize: 36.0,
+                fontSize: 35.0,
               ),
             )),
           ),
           SizedBox(height: 10.0),
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: 120,
+            width: 240,
+            height: 100,
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,

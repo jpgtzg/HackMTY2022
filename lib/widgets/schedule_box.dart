@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:public_transport_app/constants.dart';
+import '../system/constants.dart';
 
 class ScheduleBox extends StatelessWidget {
   final String fromTime;

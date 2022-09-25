@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:public_transport_app/screens/transport_details.dart';
 import 'package:public_transport_app/widgets/transport_card.dart';
 
-import '../schedule.dart';
+import '../system/schedule.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -143,17 +143,18 @@ class Home extends StatelessWidget {
                               SizedBox(height: 15),
                               TransportCard(
                                 background: Color(0xff0d0057),
-                                name: 'Garza Sada ',
+                                name: 'Garza Sada',
                                 image: 'assets/images/bus.png',
                                 pressSelect: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
                                     return TransportDetails(
-                                        title: "Bus",
+                                        title: "Garza Sada",
                                         image: 'assets/images/bus.png',
                                         location: "Lorem BUS Station",
                                         destination: "Dolor BUS Station",
-                                        schedules: schedules);
+                                        schedules: schedules,
+                                        colorCode: Color(0xff0d0057),);
                                   }));
                                 },
                               ),
@@ -166,11 +167,12 @@ class Home extends StatelessWidget {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
                                     return TransportDetails(
-                                        title: "Bus",
+                                        title: "Revolución",
                                         image: 'assets/images/bus.png',
                                         location: "Lorem BUS Station",
                                         destination: "Dolor BUS Station",
-                                        schedules: schedules);
+                                        schedules: schedules,
+                                        colorCode: Color(0xfffd8204),);
                                   }));
                                 },
                               ),
@@ -183,11 +185,12 @@ class Home extends StatelessWidget {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
                                     return TransportDetails(
-                                        title: "Bus",
+                                        title: "Hosp. & Esc.",
                                         image: 'assets/images/bus.png',
                                         location: "Lorem BUS Station",
                                         destination: "Dolor BUS Station",
-                                        schedules: schedules);
+                                        schedules: schedules,
+                                        colorCode: Color(0xffea0a2a),);
                                   }));
                                 },
                               ),
@@ -200,11 +203,12 @@ class Home extends StatelessWidget {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
                                     return TransportDetails(
-                                        title: "Bus",
+                                        title: "Valle Alto",
                                         image: 'assets/images/bus.png',
                                         location: "Lorem BUS Station",
                                         destination: "Dolor BUS Station",
-                                        schedules: schedules);
+                                        schedules: schedules,
+                                        colorCode: Color(0xff800d07),);
                                   }));
                                 },
                               ),
