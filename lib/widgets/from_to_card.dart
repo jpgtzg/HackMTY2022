@@ -102,7 +102,7 @@ class FromToCard extends StatelessWidget {
                       ),
                       TextSpan(
                         text: routeModel.routes[2],
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(fontWeight: FontWeight.w700), 
                       ),
                     ],
                   ),

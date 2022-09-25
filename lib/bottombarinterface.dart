@@ -1,7 +1,7 @@
-
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:public_transport_app/screens/home_screen.dart';
+import 'package:public_transport_app/screens/map_screen.dart';
 
 class BottomBarInterface extends StatefulWidget {
   const BottomBarInterface({Key? key}) : super(key: key);
@@ -28,10 +28,7 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
               },
               children: <Widget>[
                 Home(),
-                Container(
-                ),
-                Container(
-                ),
+                MapScreen(),
               ],
             ),
           ),
@@ -56,14 +53,6 @@ class _BottomBarInterfaceState extends State<BottomBarInterface> {
                   style: TextStyle(fontFamily: "Manrope"),
                 ),
                 icon: const Icon(Icons.map),
-                activeColor: const Color(0xFF1E91D6),
-              ),
-              BottomNavyBarItem(
-                title: const Text(
-                  'Settings',
-                  style: TextStyle(fontFamily: "Manrope"),
-                ),
-                icon: const Icon(Icons.settings),
                 activeColor: const Color(0xFF1E91D6),
               ),
             ],
