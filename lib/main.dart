@@ -12,6 +12,7 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Biosime",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'OpenSans'),
       home: AppManager(),

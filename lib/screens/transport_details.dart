@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:public_transport_app/system/routeList.dart';
+import 'package:public_transport_app/system/schedule.dart';
+import 'package:public_transport_app/widgets/schedule_box.dart';
+import 'package:public_transport_app/widgets/topbar.dart';
 
 import '../widgets/from_to_card.dart';
 
@@ -14,6 +17,7 @@ class TransportDetails extends StatelessWidget {
       backgroundColor: routeModel.colorCode,
       body: Column(
         children: <Widget>[
+          TopBar(),
           Container(
             padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 50.0),
             child: Center(
@@ -74,17 +78,16 @@ class TransportDetails extends StatelessWidget {
                   Expanded(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
-                      child: Column(
-                        children: [
-                          // for (Schedule schedule in routeModel.routeTimes) ...[
-                          //   ScheduleBox(
-                          //     fromTime: schedule.fromTime,
-                          //     toTime: schedule.toTime,
-                          //     location: schedule.location,
-                          //     pressSelect: () {},
-                          //   ),
-                          // ]
-                        ],
+                      child: ListView.builder(
+                        itemCount: routeModel.routes.length,
+                        shrinkWrap: true,
+                        physics: ScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return ScheduleBox(
+                              time: routeModel.routeTimes[index],
+                              location: routeModel.routes[index],
+                              pressSelect: () {});
+                        },
                       ),
                     ),
                   ),

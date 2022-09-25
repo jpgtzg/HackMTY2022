@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import '../system/constants.dart';
 
 class ScheduleBox extends StatelessWidget {
-  final String fromTime;
-  final String toTime;
+  final String time;
   final String location;
   final VoidCallback pressSelect;
 
   const ScheduleBox({
     Key? key,
-    required this.fromTime,
-    required this.toTime,
+    required this.time,
     required this.location,
     required this.pressSelect,
   }) : super(key: key);
@@ -29,23 +27,18 @@ class ScheduleBox extends StatelessWidget {
                   children: [
                     Image.asset('assets/icons/clock.png', width: 15),
                     SizedBox(width: 15),
-                    Text(
-                      fromTime,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
+                    Flexible(
+                      child: Text(
+                        time,
+                        overflow: TextOverflow.visible,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                     SizedBox(width: 15),
-                    Image.asset('assets/icons/arrow.png', width: 40),
-                    SizedBox(width: 15),
-                    Text(
-                      toTime,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                    
                   ],
                 ),
                 SizedBox(height: 13),
@@ -53,11 +46,14 @@ class ScheduleBox extends StatelessWidget {
                   children: [
                     Image.asset('assets/icons/location.png', width: 15),
                     SizedBox(width: 15),
-                    Text(
-                      location,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
+                    Flexible(
+                      child: Text(
+                        location,
+                        overflow : TextOverflow.visible,
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ],
