@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:public_transport_app/appmanager.dart';
 
-import 'homepage.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() => runApp(MaterialApp(
+      home: Main(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'OpenSans'),
+    ));
+
+class Main extends StatefulWidget {
+  @override
+  _MainState createState() => _MainState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
+class _MainState extends State<Main> {
+    @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Biosime',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(title: 'Biosime'),
+    return Scaffold(
+      backgroundColor: Color(0xFF4CB944),
+      body: AppManager(),
+      
     );
   }
 }
